@@ -139,8 +139,8 @@ a {
 		border-radius: 20px;
 		padding: 40px 30px;
 		min-height: 100px;
-		background-color: $pre-main-color;
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		font-size: 18px;
 		font-weight: 600;
@@ -150,12 +150,17 @@ a {
 		width: 25%;
 		word-break:normal;
 		transition: 0.2s linear;
+		
 		&:hover {
 			opacity: 0.9;
+			background-color: $main-color;
 		}
 	}
 	& p {
-		width: 90%;
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
 	}
 	& a {
 		text-decoration: none;
@@ -163,7 +168,7 @@ a {
 	&__paragraph {
 		font-size: 24px;
 		color: $black-color;
-		text-align: center;
+		
 	}
 }
 
@@ -322,7 +327,7 @@ a {
 	&__pre {
 		line-height: 18px;
 		font-size: 15px;
-		
+		tab-size: 20px;
 	}
 
 	&__style {
@@ -498,8 +503,8 @@ a {
 
 .slider {
 	width: 89%;
-	margin: 30px auto 0;
-	height: 290px;
+	margin: 30px auto 40px;
+	height: 240px;
 	font-family: sans-serif;
 	position: relative;
 	.slick-prev:before, .slick-next:before {
@@ -509,8 +514,9 @@ a {
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
-		gap: 20px;
+		gap: 10px;
 		height: 240px;
+		cursor: grab;
 	}
 	&__qr {
 		position: relative;
@@ -524,6 +530,22 @@ a {
 		height: 100vh;
 		background-color: $background-color;
 		z-index: 1;
+	}
+	&__brame {
+		width: 30%;
+		height: 90%;
+		border-radius: 15px;
+		border: 8px solid $pre-main-color;
+		color: $pre-main-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	&__title {
+		width: 90%;
+		font-size: 24px;
+		font-weight: 900;
 	}
 	&__in {
 		display: none;
@@ -579,11 +601,7 @@ a {
 			object-fit: cover;
 		}
 	}
-	&__title {
-		width: 30%;
-		font-size: 24px;
-		font-weight: 700;
-	}
+	
 	&__img {
 		height: 270px;
 		width: 270px;
@@ -593,6 +611,59 @@ a {
 		font-weight: 500;
 		width: calc(80% - 120px);
 	}
+}
+
+.box {
+	
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 2px 30px rgba($black-color, .2);
+  background: lighten($pre-main-color, 10%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wave {
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: $help-color;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: .1;
+  background: $pre-main-color;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 
 @media (max-width: 967px) {

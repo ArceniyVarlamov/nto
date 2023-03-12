@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 export default function Tasks() {
 	const titles = [
-		"Куб",
-		"Сфера",
-		"Моделька",
-		"Музыкальная картинка",
-		"Видео",
-		"Прозрачный куб",
-		"Земной шар",
-		"Анимированная снежинка",
+		"Триггер и оверлей",
+		"Текст и простые объекты",
+		"Объекты сложной формы",
+		"Встроенный звук",
+		"Встроенное видео",
+		"Мультимаркер",
+		"Вращающийся глобус",
+		"Движущаяся плоскость",
 		"...",
-		"Анимированный спрайт",
-		"Сцена с анимацией",
-		"",
+		"Дыра в полу",
+		"Спрайтовая анимация",
+		"Множество объектов",
 		"",
 		"",
 		"",
@@ -22,32 +22,41 @@ export default function Tasks() {
 
 	return (
 		<div className='tasks'>
-			<div class='tasks__paragraph'>AR.js</div>
+			<div className='tasks__paragraph'>AR.js</div>
 			<div className='tasks__container'>
 				{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
 					return (
-						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
-							<p>{titles[i]}</p>
+						<Link className='tasks__task box' key={i} to={`/task?num=${i + ""}`}>
+							<p className="title">{titles[i]}</p>
+							<div className='wave -one'></div>
+  						<div className='wave -two'></div>
+  						<div className='wave -three'></div>
 						</Link>
 					);
 				})}
 			</div>
-			<div class='tasks__paragraph'>Three.js, Universal SDK</div>
-			<div class='tasks__container'>
-				{[5, 6, 7, 8, 9].map((i) => {
+			<div className='tasks__paragraph'>Three.js, Universal SDK</div>
+			<div className='tasks__container'>
+				{[12].map((i) => {
 					return (
-						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
+						<Link className='tasks__task box' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
+							<div className='wave -one'></div>
+  						<div className='wave -two'></div>
+  						<div className='wave -three'></div>
 						</Link>
 					);
 				})}
 			</div>
-			<div class='tasks__paragraph'>Игры</div>
-			<div class='tasks__container'>
-				{[10, 11, 12, 13, 14].map((i) => {
+			<div className='tasks__paragraph'>Игры</div>
+			<div className='tasks__container'>
+				{[13].map((i) => {
 					return (
-						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
+						<Link className='tasks__task box' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
+							<div className='wave -one'></div>
+  						<div className='wave -two'></div>
+  						<div className='wave -three'></div>
 						</Link>
 					);
 				})}
