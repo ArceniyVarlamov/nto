@@ -1,6 +1,7 @@
 import {useRef } from "react";
 import { Link } from "react-router-dom";
 import arrow from '../img/rightBlack.png'
+import Video from './Video';
 
 export default function Description(
   { num } = {
@@ -13,99 +14,85 @@ export default function Description(
 			num: 1,
 			leftPage: 15,
 			rightPage: 2,
-			url: "",
-			video: "",
+			url: "https://solution1.glitch.me/",
 		},
 		{
 			num: 2,
 			leftPage: 1,
 			rightPage: 3,
-			url: "",
-			video: "",
+			url: "https://solution2.glitch.me/",
 		},
 		{
 			num: 3,
 			leftPage: 2,
 			rightPage: 4,
-			url: "",
-			video: "",
+			url: "https://solution3.glitch.me/",
 		},
 		{
 			num: 4,
 			leftPage: 3,
 			rightPage: 5,
-			url: "",
-			video: "",
+			url: "https://solution4.glitch.me/",
 		},
 		{
 			num: 5,
 			leftPage: 4,
 			rightPage: 6,
-			url: "",
-			video: "",
+			url: "https://solution5.glitch.me/",
 		},
 		{
 			num: 6,
 			leftPage: 5,
 			rightPage: 7,
-			url: "",
-			video: "",
+			url: "https://solution6.glitch.me/",
 		},
 		{
 			num: 7,
 			leftPage: 6,
 			rightPage: 8,
-			url: "",
-			video: "",
+			url: "https://solution7.glitch.me/",
 		},
 		{
 			num: 8,
 			leftPage: 7,
 			rightPage: 9,
-			url: "",
-			video: "",
+			url: "https://solution8.glitch.me/",
 		},
 		{
 			num: 9,
 			leftPage: 8,
 			rightPage: 10,
-			url: "",
-			video: "",
+			url: "https://solution9.glitch.me/",
 		},
 		{
 			num: 10,
 			leftPage: 9,
 			rightPage: 11,
-			url: "",
-			video: "",
+			url: "https://solution10.glitch.me/",
 		},
 		{
 			num: 11,
 			leftPage: 10,
 			rightPage: 12,
-			url: "",
-			video: "",
+			url: "https://solution11.glitch.me/",
 		},
 		{
 			num: 12,
 			leftPage: 11,
 			rightPage: 13,
-			url: "",
-			video: "",
+			url: "https://solution12.glitch.me/",
 		},
 		{
 			num: 13,
 			leftPage: 12,
 			rightPage: 14,
 			url: "",
-			video: "",
 		},
 		{
 			num: 14,
 			leftPage: 13,
 			rightPage: 15,
 			url: "",
-			video: "",
 		},
 		{
 			num: 15,
@@ -154,9 +141,7 @@ export default function Description(
           alt=''
         ></img>
         <div className="description__video">
-          <video controls loop autoplay>
-            <source src={tasksInfo[num].video}></source>
-          </video>
+          <Video key={num} num={num}></Video>
         </div>
       </div>
       <div className="description__links">
