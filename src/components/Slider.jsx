@@ -4,45 +4,39 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import cross from "../img/cross.png";
 import qr from "../img/qr-code.gif";
+import patternLogo from "../img/pattern-logo.png";
+import patternCity from "../img/pattern-city.png";
+import patternDanila3D from "../img/pattern-Danila3D.png";
+import patternNatali3D from "../img/pattern-Natali3D.png";
+import patternArseniy3D from "../img/pattern-Arseniy3D.png";
+import patternKate3D from "../img/pattern-Kate3D.png";
 
 export default function Carousel() {
 	const [active, setActive] = useState(false);
 	const hotelCards = [
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/pattern-logo_4.png?v=1671025598749",
+			imageSrc: patternLogo,
 			title: "Наша команда",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/pattern-8876..png?v=1671113464108",
+			imageSrc: patternCity,
 			title: "Наш город",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_5_2022-12-15_19-08-40.jpg?v=1671113422335",
-			title: "Программист",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
+			imageSrc: patternDanila3D,
+			title: "Программист Backend",
 		},
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_9_2022-12-15_19-08-40.jpg?v=1671113382303",
+			imageSrc: patternNatali3D,
 			title: "Дизайнер",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_3_2022-12-15_19-08-40.jpg?v=1671113442204",
-			title: "Программист",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
+			imageSrc: patternArseniy3D,
+			title: "Программист Frontend",
 		},
 		{
-			imageSrc:
-				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_4_2022-12-15_19-08-40.jpg?v=1671113435220",
+			imageSrc: patternKate3D,
 			title: "Моделлер",
-			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 	];
 	const settings = {

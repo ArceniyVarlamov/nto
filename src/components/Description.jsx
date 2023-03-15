@@ -1,6 +1,7 @@
 import {useRef } from "react";
 import { Link } from "react-router-dom";
 import arrow from '../img/rightBlack.png'
+import logo from '../img/pattern-logo.png'
 import Video from './Video';
 
 export default function Description(
@@ -14,73 +15,73 @@ export default function Description(
 			num: 1,
 			leftPage: 15,
 			rightPage: 2,
-			url: "https://solution1.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/1.html",
 		},
 		{
 			num: 2,
 			leftPage: 1,
 			rightPage: 3,
-			url: "https://solution2.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/2.html",
 		},
 		{
 			num: 3,
 			leftPage: 2,
 			rightPage: 4,
-			url: "https://solution3.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/3.html",
 		},
 		{
 			num: 4,
 			leftPage: 3,
 			rightPage: 5,
-			url: "https://solution4.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/4.html",
 		},
 		{
 			num: 5,
 			leftPage: 4,
 			rightPage: 6,
-			url: "https://solution5.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/5.html",
 		},
 		{
 			num: 6,
 			leftPage: 5,
 			rightPage: 7,
-			url: "https://solution6.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/6.html",
 		},
 		{
 			num: 7,
 			leftPage: 6,
 			rightPage: 8,
-			url: "https://solution7.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/7.html",
 		},
 		{
 			num: 8,
 			leftPage: 7,
 			rightPage: 9,
-			url: "https://solution8.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/8.html",
 		},
 		{
 			num: 9,
 			leftPage: 8,
 			rightPage: 10,
-			url: "https://solution9.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/9.html",
 		},
 		{
 			num: 10,
 			leftPage: 9,
 			rightPage: 11,
-			url: "https://solution10.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/10.html",
 		},
 		{
 			num: 11,
 			leftPage: 10,
 			rightPage: 12,
-			url: "https://solution11.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/11.html",
 		},
 		{
 			num: 12,
 			leftPage: 11,
 			rightPage: 13,
-			url: "https://solution12.glitch.me/",
+			url: "https://arceniyvarlamov.github.io/tasks/base/12.html",
 		},
 		{
 			num: 13,
@@ -104,11 +105,11 @@ export default function Description(
 	];
   const imgDesk = useRef();
   const checkWidth = () => {
-    if (imgDesk.current.style.width == "60%") {
+    if (imgDesk.current.style.width === "50%") {
       imgDesk.current.style.width = "20%";
       imgDesk.current.style.borderRadius = "";
     } else {
-      imgDesk.current.style.width = "60%";
+      imgDesk.current.style.width = "50%";
       imgDesk.current.style.borderRadius = "10px";
     }
   }
@@ -134,7 +135,7 @@ export default function Description(
       </div>
       <div className="description__show">
         <img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAACoCAMAAACPKThEAAAAA1BMVEVrbnfW57utAAAASElEQVR4nO3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICXAcTgAAG6EJuyAAAAAElFTkSuQmCC"
+          src={logo}
           className="description__img"
           ref={imgDesk}
           onClick={() => checkWidth()}

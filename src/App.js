@@ -5,7 +5,6 @@ import HomePage from "./pages/home";
 import TaskPage from "./pages/task";
 import HtmlPage from "./pages/html";
 import Header from "./components/Header";
-import DemonstrationPage from './pages/demonstration';
 
 function App() {
 	return (
@@ -17,7 +16,6 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/task' element={<TaskPage />} />
 					<Route path='/html' element={<HtmlPage />} />
-					<Route path='/demonstration' element={<DemonstrationPage />} />
 				</Routes>
 			</BrowserRouter>
 		</>

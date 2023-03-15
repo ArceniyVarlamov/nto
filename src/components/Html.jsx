@@ -172,9 +172,6 @@ export default function Html({ num = 0 }) {
 			embedded
 			arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
 		>
-			<a-marker type="hiro">
-				<a-sphere scale="1 1 1" color="red"> </a-sphere>
-			</a-marker>
 			<a-marker
 				preset="custom"
 				type="pattern"
@@ -187,22 +184,6 @@ export default function Html({ num = 0 }) {
 					position="0 0.5 0"
 					material="opacity:0.5; side:double; color:green;"
 				></a-box>
-			</a-marker>
-			<a-marker type="barcode" value="5">
-				<a-sphere scale="1 1 1" color="red"></a-sphere>
-			</a-marker>
-			<a-marker preset="kanji">
-				<a-box
-					position="0 0.5 0"
-					material="opacity: 0.5; side: double;color:green;"
-				>
-					<a-torus-knot
-						radius="0.26"
-						radius-tubular="0.05"
-						animation="property: rotation; to:360 0 0; dur: 5000; easing: linear;loop: true"
-					>
-					</a-torus-knot>
-				</a-box>
 			</a-marker>
 			<a-entity camera></a-entity>
 		</a-scene>
