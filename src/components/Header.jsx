@@ -11,7 +11,7 @@ export default function Header() {
 	let container, plane;
 
 	const addBall = () => {
-		const geo = new THREE.SphereGeometry(Math.random() + 1, 10, 10);
+		const geo = new THREE.SphereGeometry(Math.random() + 0.5, 10, 10);
 		const mat = new THREE.MeshBasicMaterial({
 			color: 0x000,
 			wireframe: true,
@@ -23,8 +23,8 @@ export default function Header() {
 			Math.random() * (camera.right - camera.left) -
 			(camera.right - camera.left) / 2;
 
-		msh.userData.vx = Math.random() * 1.2 - 0.6;
-		msh.userData.vy = Math.random() * 1.2 - 0.6;
+		msh.userData.vx = 0.1;
+		msh.userData.vy = 0.1;
 
 		container.add(msh);
 	};
@@ -107,8 +107,13 @@ export default function Header() {
 
 	setInterval(() => {
 		for (let ball of container.children) {
-			ball.userData.vx = Math.random() / 2;
-			ball.userData.vy = Math.random() / 2;
+			ball.userData.vy = -0.105;
+			if (Math.random() >= 0.5) {
+				ball.userData.vx = Math.random() / 10;
+			} else {
+				ball.userData.vx = -Math.random() / 10;
+				
+			}
 		}
 	}, 2000);
 

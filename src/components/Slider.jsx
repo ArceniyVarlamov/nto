@@ -56,11 +56,8 @@ export default function Carousel() {
 		slidesToScroll: 1,
 	};
 
-	
-
 	return (
 		<div className='slider'>
-		
 			<div className='slider__qr'>
 				<div className={active ? "slider__background" : ""}></div>
 				<div
@@ -84,18 +81,24 @@ export default function Carousel() {
 			<Slider {...settings}>
 				{hotelCards.map((card, index) => (
 					<div className='slider__container' key={index}>
-					<div class="container"></div>
 						<div class='slider__brame'>
 							<p className='slider__title'>{card.title}</p>
 						</div>
-
-						<img
-							className='slider__img'
-							alt={card.title}
-							src={card.imageSrc}
-							width='100'
-							height='100'
-						/>
+						<div class='slider__frame'>
+							<img
+								className='slider__img'
+								alt={card.title}
+								src={card.imageSrc}
+								width='100'
+								height='100'
+							/>
+							<div class='slider__overlay'>
+								<div class='slider__overlay-element slider__top-left'></div>
+								<div class='slider__overlay-element slider__top-right'></div>
+								<div class='slider__overlay-element slider__bottom-left'></div>
+								<div class='slider__overlay-element slider__bottom-right'></div>
+							</div>
+						</div>
 					</div>
 				))}
 			</Slider>

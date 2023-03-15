@@ -12,6 +12,7 @@ import background9 from "../img/background9.png"
 import background10 from "../img/background10.jpg"
 import background11 from "../img/background11.jpg"
 import background12 from "../img/background12.jpg"
+import background13 from "../img/background13.jpg"
 
 export default function Tasks() {
 	const titles = [
@@ -27,7 +28,7 @@ export default function Tasks() {
 		"Дыра в полу",
 		"Спрайтовая анимация",
 		"Множество объектов",
-		"",
+		"Волшебный куб",
 		"",
 		"",
 	];
@@ -45,6 +46,7 @@ export default function Tasks() {
 		background10,
 		background11,
 		background12,
+		background13
 	]
 
 	return (
@@ -64,11 +66,9 @@ export default function Tasks() {
 			<div className='tasks__container'>
 				{[12].map((i) => {
 					return (
-						<Link className='tasks__task box' key={i} to={`/task?num=${i + ""}`}>
+						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
-							<div className='wave -one'></div>
-  						<div className='wave -two'></div>
-  						<div className='wave -three'></div>
+							<img src={img[i]} alt=""></img>
 						</Link>
 					);
 				})}

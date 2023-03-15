@@ -150,9 +150,9 @@ a {
 		color: $help-color;
 		background-color: $pre-main-color;
 		cursor: pointer;
-		word-break:normal;
+		word-break: normal;
 		transition: 0.2s linear;
-		
+
 		&:hover {
 			opacity: 0.9;
 			background-color: $main-color;
@@ -171,7 +171,7 @@ a {
 		align-items: center;
 	}
 	& img {
-		mix-blend-mode:overlay;
+		mix-blend-mode: overlay;
 		border-radius: 15px;
 		position: absolute;
 		width: 100%;
@@ -282,9 +282,9 @@ a {
 	}
 	&__links *:hover {
 		background-color: $main-color;
-		
 	}
-	&__html div, &__html div {
+	&__html div,
+	&__html div {
 		width: 100%;
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
@@ -296,8 +296,8 @@ a {
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
-	font-family: 'Inter', sans-serif;
-	
+	font-family: "Inter", sans-serif;
+
 	&__out {
 		width: 90%;
 	}
@@ -327,7 +327,6 @@ a {
 		background-color: $help-color;
 		width: 100%;
 		height: 70vh;
-		
 	}
 
 	&__col {
@@ -519,17 +518,17 @@ a {
 .slider {
 	width: 89%;
 	margin: 30px auto 40px;
-	height: 240px;
+	height: 250px;
 	font-family: sans-serif;
 	position: relative;
-	.slick-prev:before, .slick-next:before {
+	.slick-prev:before,
+	.slick-next:before {
 		color: $pre-main-color;
 	}
 	&__container {
 		display: flex !important;
 		align-items: center;
-		justify-content: center;
-		gap: 10px;
+		justify-content: space-around;
 		height: 240px;
 		cursor: grab;
 	}
@@ -550,7 +549,7 @@ a {
 		width: 30%;
 		height: 90%;
 		border-radius: 15px;
-		
+
 		color: $pre-main-color;
 		display: flex;
 		justify-content: center;
@@ -559,7 +558,7 @@ a {
 	}
 	&__title {
 		width: 90%;
-		font-size: 24px;
+		font-size: 2vw;
 		font-weight: 900;
 	}
 	&__in {
@@ -570,8 +569,8 @@ a {
 		cursor: zoom-in;
 		position: absolute;
 		left: 0;
-		width: 20px;
-		height: 20px;
+		width: 50px;
+		height: 50px;
 		background-color: black;
 		transition: 0.2s linear;
 		&:hover {
@@ -610,75 +609,116 @@ a {
 		display: block;
 		width: 270px;
 		height: 270px;
+		z-index: 5;
 		& img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 		}
 	}
-	
-	&__img {
-		height: 270px;
-		width: 270px;
+	&__frame {
+		width: 260px;
+		height: 260px;
+		position: relative;
 	}
-	&__desc {
-		font-size: 16px;
-		font-weight: 500;
-		width: calc(80% - 120px);
+	&__overlay {
+		width: 260px;
+		height: 260px;
+		--border-style: 4px solid #6b7684;
+		--border-space: 10px;
+	}
+
+	&__overlay-element {
+		position: absolute;
+		width: 30px; /* controls the length of the borders */
+		height: 30px; /* controls the height of the borders */
+	}
+
+	&__overlay &__top-left {
+		border-left: var(--border-style);
+		border-top: var(--border-style);
+		top: var(--border-space);
+		left: var(--border-space);
+	}
+
+	&__overlay &__top-right {
+		border-right: var(--border-style);
+		border-top: var(--border-style);
+		top: var(--border-space);
+		right: var(--border-space);
+	}
+
+	&__overlay &__bottom-left {
+		border-left: var(--border-style);
+		border-bottom: var(--border-style);
+		bottom: var(--border-space);
+		left: var(--border-space);
+	}
+
+	&__overlay &__bottom-right {
+		border-right: var(--border-style);
+		border-bottom: var(--border-style);
+		bottom: var(--border-space);
+		right: var(--border-space);
+	}
+	&__img {
+		width: 260px;
+		height: 260px;
 	}
 }
 
 .box {
-	
-  width: 300px;
-  height: 300px;
-  box-shadow: 0 2px 30px rgba($black-color, .2);
-  background: $pre-main-color;
-  position: relative;
-  overflow: hidden;
+	width: 300px;
+	height: 300px;
+	box-shadow: 0 2px 30px rgba($black-color, 0.2);
+	background: $pre-main-color;
+	position: relative;
+	overflow: hidden;
 }
 
 .wave {
-  opacity: .4;
-  position: absolute;
-  top: 3%;
-  left: 50%;
-  background: $help-color;
-  width: 500px;
-  height: 500px;
-  margin-left: -250px;
-  margin-top: -250px;
-  transform-origin: 50% 48%;
-  border-radius: 43%;
-  animation: drift 3000ms infinite linear;
+	opacity: 0.4;
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	background: $help-color;
+	width: 500px;
+	height: 500px;
+	margin-left: -250px;
+	margin-top: -250px;
+	transform-origin: 50% 48%;
+	border-radius: 43%;
+	animation: drift 3000ms infinite linear;
 }
 
 .wave.-three {
-  animation: drift 5000ms infinite linear;
+	animation: drift 5000ms infinite linear;
 }
 
 .wave.-two {
-  animation: drift 7000ms infinite linear;
-  opacity: .1;
-  background: $pre-main-color;
+	animation: drift 7000ms infinite linear;
+	opacity: 0.1;
+	background: $pre-main-color;
 }
 
 .box:after {
-  content: '';
-  display: block;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 11;
-  transform: translate3d(0, 0, 0);
+	content: "";
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 11;
+	transform: translate3d(0, 0, 0);
 }
 
-
-
 @keyframes drift {
-  from { transform: rotate(0deg); }
-  from { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	from {
+		transform: rotate(360deg);
+	}
 }
 
 @media (max-width: 967px) {
@@ -721,6 +761,11 @@ a {
 			height: 80px;
 			border-radius: 11px;
 			display: flex;
+		}
+	}
+	.slider {
+		&__title {
+			font-size: 3vw;
 		}
 	}
 }
