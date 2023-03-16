@@ -13,7 +13,7 @@ import patternKate3D from "../img/pattern-Kate3D.png";
 
 export default function Carousel() {
 	const [active, setActive] = useState(false);
-	const hotelCards = [
+	const comandCards = [
 		{
 			imageSrc: patternLogo,
 			title: "Наша команда",
@@ -73,12 +73,12 @@ export default function Carousel() {
 				</div>
 			</div>
 			<Slider {...settings}>
-				{hotelCards.map((card, index) => (
+				{comandCards.map((card, index) => (
 					<div className='slider__container' key={index}>
-						<div class='slider__brame'>
+						<div className='slider__brame'>
 							<p className='slider__title'>{card.title}</p>
 						</div>
-						<div class='slider__frame'>
+						<div className='slider__frame'>
 							<img
 								className='slider__img'
 								alt={card.title}
@@ -86,11 +86,11 @@ export default function Carousel() {
 								width='100'
 								height='100'
 							/>
-							<div class='slider__overlay'>
-								<div class='slider__overlay-element slider__top-left'></div>
-								<div class='slider__overlay-element slider__top-right'></div>
-								<div class='slider__overlay-element slider__bottom-left'></div>
-								<div class='slider__overlay-element slider__bottom-right'></div>
+							<div className='slider__overlay'>
+								<div className='slider__overlay-element slider__top-left'></div>
+								<div className='slider__overlay-element slider__top-right'></div>
+								<div className='slider__overlay-element slider__bottom-left'></div>
+								<div className='slider__overlay-element slider__bottom-right'></div>
 							</div>
 						</div>
 					</div>

@@ -13,6 +13,7 @@ import background10 from "../img/background10.jpg"
 import background11 from "../img/background11.jpg"
 import background12 from "../img/background12.jpg"
 import background13 from "../img/background13.jpg"
+import background14 from "../img/background14.jpg"
 
 export default function Tasks() {
 	const titles = [
@@ -29,7 +30,7 @@ export default function Tasks() {
 		"Спрайтовая анимация",
 		"Множество объектов",
 		"Волшебный куб",
-		"",
+		"AR портал",
 		"",
 	];
 
@@ -46,7 +47,8 @@ export default function Tasks() {
 		background10,
 		background11,
 		background12,
-		background13
+		background13,
+		background14
 	]
 
 	return (
@@ -64,7 +66,7 @@ export default function Tasks() {
 			</div>
 			<div className='tasks__paragraph'>Three.js, Universal SDK</div>
 			<div className='tasks__container'>
-				{[12].map((i) => {
+				{[12, 13, 14].map((i) => {
 					return (
 						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
@@ -75,13 +77,10 @@ export default function Tasks() {
 			</div>
 			<div className='tasks__paragraph'>Игры</div>
 			<div className='tasks__container'>
-				{[13].map((i) => {
+				{[15, 16, 17].map((i) => {
 					return (
-						<Link className='tasks__task box' key={i} to={`/task?num=${i + ""}`}>
+						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
-							<div className='wave -one'></div>
-  						<div className='wave -two'></div>
-  						<div className='wave -three'></div>
 						</Link>
 					);
 				})}

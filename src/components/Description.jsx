@@ -1,16 +1,15 @@
-import {useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import arrow from '../img/rightBlack.png'
-import logo from '../img/pattern-logo.png'
-import Video from './Video';
+import arrow from "../img/rightBlack.png";
+import logo from "../img/pattern-logo.png";
+import Video from "./Video";
 
 export default function Description(
-  { num } = {
-    num: 1,
-  }
+	{ num } = {
+		num: 1,
+	},
 ) {
-
-  const tasksInfo = [
+	const tasksInfo = [
 		{
 			num: 1,
 			leftPage: 15,
@@ -87,13 +86,13 @@ export default function Description(
 			num: 13,
 			leftPage: 12,
 			rightPage: 14,
-			url: "",
+			url: "https://arceniyvarlamov.github.io/tasks/advanced/magic-cube.html",
 		},
 		{
 			num: 14,
 			leftPage: 13,
 			rightPage: 15,
-			url: "",
+			url: "https://arceniyvarlamov.github.io/tasks/advanced/portal-ar.html",
 		},
 		{
 			num: 15,
@@ -103,56 +102,69 @@ export default function Description(
 			video: "",
 		},
 	];
-  const imgDesk = useRef();
-  const checkWidth = () => {
-    if (imgDesk.current.style.width === "50%") {
-      imgDesk.current.style.width = "20%";
-      imgDesk.current.style.borderRadius = "";
-    } else {
-      imgDesk.current.style.width = "50%";
-      imgDesk.current.style.borderRadius = "10px";
-    }
-  }
 
-  return (
-    <div className="description">
-      <div className="description__num">
-        <Link to={`/task?num=${+num - 1 === -1 ? 14 : +num - 1}`}>
-          <img
-            className="description__str1"
-            src={arrow}
-            alt='>'
-          ></img>
-        </Link>
-        Задание {+num + 1}
-        <Link to={`/task?num=${+num + 1 === 15 ? 0 : +num + 1}`}>
-          <img
-            className="description__str2"
-            src={arrow}
-            alt=''
-          ></img>
-        </Link>
-      </div>
-      <div className="description__show">
-        <img
-          src={logo}
-          className="description__img"
-          ref={imgDesk}
-          onClick={() => checkWidth()}
-          alt=''
-        ></img>
-        <div className="description__video">
-          <Video key={num} num={num}></Video>
-        </div>
-      </div>
-      <div className="description__links">
-        <Link className="description__html" to={`/html?num=${num}`}>
-          <div>Код решения</div>
-        </Link>
-        <a target="_blank" href={tasksInfo[num].url}>
-          Демонстрация
-        </a>
-      </div>
-    </div>
-  );
+	const tasksMarkers = [
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+		[logo],
+	];
+
+	const imgDesk = useRef();
+	const checkWidth = () => {
+		if (imgDesk.current.style.width === "50%") {
+			imgDesk.current.style.width = "20%";
+			imgDesk.current.style.borderRadius = "";
+		} else {
+			imgDesk.current.style.width = "50%";
+			imgDesk.current.style.borderRadius = "10px";
+		}
+	};
+
+	return (
+		<div className='description'>
+			<div className='description__num'>
+				<Link to={`/task?num=${+num - 1 === -1 ? 14 : +num - 1}`}>
+					<img className='description__str1' src={arrow} alt='>'></img>
+				</Link>
+				Задание {+num + 1}
+				<Link to={`/task?num=${+num + 1 === 15 ? 0 : +num + 1}`}>
+					<img className='description__str2' src={arrow} alt=''></img>
+				</Link>
+			</div>
+			<div className='description__show'>
+				<div
+					className='description__img'
+					ref={imgDesk}
+					onClick={() => checkWidth()}
+				>
+					{tasksMarkers[num].map((item) => (
+						<img src={item} alt=''></img>
+					))}
+				</div>
+				<div className='description__video'>
+					<Video key={num} num={num}></Video>
+				</div>
+			</div>
+			<div className='description__links'>
+				<Link className='description__html' to={`/html?num=${num}`}>
+					<div>Код решения</div>
+				</Link>
+				<a target='_blank' href={tasksInfo[num].url}>
+					Демонстрация
+				</a>
+			</div>
+		</div>
+	);
 }
