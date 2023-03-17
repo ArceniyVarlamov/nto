@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import arrow from "../img/rightBlack.png";
 import logo from "../img/pattern-logo.png";
 import Video from "./Video";
+import cube1 from "../img/pattern-irkutsk1.png"
+import cube2 from "../img/pattern-irkutsk2.png"
+import cube3 from "../img/pattern-irkutsk3.png"
+import cube4 from "../img/pattern-magnitogorsk1.png"
+import cube5 from "../img/pattern-magnitogorsk2.png"
+import cube6 from "../img/pattern-magnitogorsk3.png"
 
 export default function Description(
 	{ num } = {
@@ -116,7 +122,7 @@ export default function Description(
 		[logo],
 		[logo],
 		[logo],
-		[logo],
+		[cube1, cube2, cube3, cube4, cube5, cube6],
 		[logo],
 		[logo],
 	];

@@ -8,6 +8,7 @@ $background-color: #7a7a8f20;
 $pre-main-color: #6b7684;
 $help-color: #f1f8fed4;
 $black-color: black;
+$white-color: white;
 
 * {
 	margin: 0;
@@ -228,7 +229,7 @@ a {
 		border-radius: 10px;
 	}
 	&__img {
-		background-color: $help-color;
+		background-color: rgba($white-color, 0.8);
 		width: 20%;
 		z-index: 1;
 		transition: 0.4s linear;
@@ -549,6 +550,25 @@ a {
 	&__qr {
 		position: relative;
 		left: 0;
+	}
+	&__html {
+		cursor: pointer;
+		z-index: 1;
+		color: $black-color;
+		position: absolute;
+		right: 0;
+		top: 0;
+		
+	}
+	&__out {
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 24px;
+		border-radius: 10px;
+		font-weight: 800;
 	}
 	&__background {
 		position: fixed;

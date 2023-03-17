@@ -4,7 +4,7 @@ import Nav from "./Nav";
 export default function Html({ num = 0 }) {
 	//! Код каждой демонстрации
 	const htmlInfo = [
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -24,7 +24,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -44,7 +44,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -70,7 +70,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -116,7 +116,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -160,7 +160,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -189,7 +189,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -222,7 +222,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -277,7 +277,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<title>Задание 9</title>
@@ -386,7 +386,7 @@ export default function Html({ num = 0 }) {
 			</style>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -432,7 +432,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -467,7 +467,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -505,7 +505,7 @@ export default function Html({ num = 0 }) {
 		</a-scene>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<meta
@@ -529,6 +529,7 @@ export default function Html({ num = 0 }) {
 
 		<script type="module">
 			import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { Link } from 'react-router-dom';
 
 			var scene, camera, renderer, clock, deltaTime, totalTime;
 
@@ -593,12 +594,12 @@ export default function Html({ num = 0 }) {
 				markerRootArray = [];
 				markerGroupArray = [];
 				patternArray = [
-					"letterA",
-					"letterB",
-					"letterC",
-					"letterD",
-					"letterF",
-					"kanji",
+					"pattern-irkutsk1",
+					"pattern-irkutsk2",
+					"pattern-irkutsk3",
+					"pattern-magnitogorsk1",
+					"pattern-magnitogorsk2",
+					"pattern-magnitogorsk3",
 				];
 
 				let rotationArray = [
@@ -731,14 +732,14 @@ export default function Html({ num = 0 }) {
 
 				const loaderGltf = new THREE.GLTFLoader();
 
-				loaderGltf.load("./data/чтото.glb", function (gltf) {
+				loaderGltf.load("./data/tank.glb", function (gltf) {
 					var object = gltf.scene;
-					console.log(gltf);
-					const mixer = new THREE.AnimationMixer(object);
-					var action = mixer.clipAction(gltf.animations[0]);
-					action.play();
-					object.scale.set(0.3, 0.3, 0.3);
-					object.rotation.y = Math.PI / 2;
+					// console.log(gltf);
+					// const mixer = new THREE.AnimationMixer(object);
+					// var action = mixer.clipAction(gltf.animations[0]);
+					// action.play();
+					object.scale.set(0.07, 0.07, 0.07);
+					// object.rotation.x= Math.PI / 2;
 					sceneGroup.add(object);
 				});
 
@@ -774,7 +775,7 @@ export default function Html({ num = 0 }) {
 		</script>
 	</body>
 </html>`,
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 <html>
 	<head>
 		<meta
@@ -1008,20 +1009,218 @@ export default function Html({ num = 0 }) {
 	</body>
 </html>`,
 		``,
+		``,
+		``,
+		``,
+		``,
+		``,
+		`<html>
+	<head>
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+		<script src="https://stemkoski.github.io/A-Frame-Examples/js/aframe-spritesheet-animation.js"></script>
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	</head>
+	
+	<body style="margin: 0px; overflow: hidden">
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let marker = document.querySelector("#B");
+				let video = document.querySelector("#Danila");
+				marker.addEventListener("markerFound", function () {
+					var markerId = marker.id;
+					console.log("markerFound", markerId);
+					video.play();
+				});
+				marker.addEventListener("markerLost", function () {
+					var markerId = marker.id;
+					console.log("markerLost", markerId);
+					video.pause();
+				});
+			});
+		</script>
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let marker = document.querySelector("#C");
+				let video = document.querySelector("#Katia");
+				marker.addEventListener("markerFound", function () {
+					var markerId = marker.id;
+					console.log("markerFound", markerId);
+					video.play();
+				});
+				marker.addEventListener("markerLost", function () {
+					var markerId = marker.id;
+					console.log("markerLost", markerId);
+					video.pause();
+				});
+			});
+		</script>
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let marker = document.querySelector("#D");
+				let video = document.querySelector("#Arceny");
+				marker.addEventListener("markerFound", function () {
+					var markerId = marker.id;
+					console.log("markerFound", markerId);
+					video.play();
+				});
+				marker.addEventListener("markerLost", function () {
+					var markerId = marker.id;
+					console.log("markerLost", markerId);
+					video.pause();
+				});
+			});
+		</script>
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let marker = document.querySelector("#F");
+				let video = document.querySelector("#Natasha");
+				marker.addEventListener("markerFound", function () {
+					var markerId = marker.id;
+					console.log("markerFound", markerId);
+					video.play();
+				});
+				marker.addEventListener("markerLost", function () {
+					var markerId = marker.id;
+					console.log("markerLost", markerId);
+					video.pause();
+				});
+			});
+		</script>
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let marker = document.querySelector("#G");
+				let video = document.querySelector("#Magnitogorsk");
+				marker.addEventListener("markerFound", function () {
+					var markerId = marker.id;
+					console.log("markerFound", markerId);
+					video.play();
+				});
+				marker.addEventListener("markerLost", function () {
+					var markerId = marker.id;
+					console.log("markerLost", markerId);
+					video.pause();
+				});
+			});
+		</script>
+	
+		<a-scene embedded arjs>
+			<a-assets>
+				<video
+					id="Magnitogorsk"
+					src="https://cdn.glitch.me/b008c373-328e-4db5-881a-9a03fdfcd8fe/Magnitogorsk%20%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%202018%204K.mp4?v=1671034712975"
+					loop="true"
+				/>
+			</a-assets>
+
+			<a-assets>
+				<video id="Danila" src="./video/danila.mp4" loop="true" />
+			</a-assets>
+
+			<a-assets>
+				<video id="Katia" src="./video/katya.mp4" loop="true" />
+			</a-assets>
+
+			<a-assets>
+				<video id="Arceny" src="./video/arseniy.mp4" loop="true" />
+			</a-assets>
+
+			<a-assets>
+				<video id="Natasha" src="./video/natasha.mp4" loop="true" />
+			</a-assets>
+
+			<a-assets>
+				<img id="img1" src="./img/prim.png" />
+			</a-assets>
+
+			<a-marker
+				id="B"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-Danila3D.patt"
+			>
+				<a-video src="#Danila" rotation="-90 0 0"></a-video>
+			</a-marker>
+
+			<a-marker
+				id="A"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-logo.patt"
+			>
+				<a-image src="#img1" rotation="-90 0 0"></a-image>
+			</a-marker>
+
+			<a-marker
+				id="D"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-Arseniy3D.patt"
+			>
+				<a-video src="#Arceny" rotation="-90 0 0"></a-video>
+			</a-marker>
+
+			<a-marker
+				id="C"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-Kate3D.patt"
+			>
+				<a-video src="#Katia" rotation="-90 0 0"></a-video>
+			</a-marker>
+
+			<a-marker
+				id="F"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-Natali3D.patt"
+			>
+				<a-video src="#Natasha" rotation="-90 0 0"></a-video>
+			</a-marker>
+
+			<a-marker
+				id="G"
+				type="pattern"
+				preset="custom"
+				url="./patterns/pattern-city.patt"
+			>
+				<a-video src="#Magnitogorsk" rotation="-90 0 0"></a-video>
+			</a-marker>
+
+			<a-entity camera></a-entity>
+		</a-scene>
+	</body>
+</html>`,
 	];
+	let show = true;
+	if (num < 0) {
+		num = htmlInfo.length - 1;
+		show = false;
+	}
 
 	return (
 		<>
 			<div className='code'>
 				<div className='code__out'>
 					<div className='code__info'>
-						{htmlInfo[num].split("\n").length } строк
-						<div className='code__nav'>
-							<Nav num={num}></Nav>
-						</div>
+						<p>{htmlInfo[num].split("\n").length} строк</p>
+						{show ? (
+							<div className='code__nav'>
+								<Nav num={num}></Nav>
+							</div>
+						) : (
+							<div className='code__nav'>Решение командного блока</div>
+						)}
 					</div>
 					<div className='code__container'>
-						<CodeStyle colStr={htmlInfo[num].split("\n").length + 1}></CodeStyle>
+						<CodeStyle
+							colStr={htmlInfo[num].split("\n").length + 1}
+						></CodeStyle>
 						<pre className='code__pre'>{htmlInfo[num]}</pre>
 					</div>
 				</div>

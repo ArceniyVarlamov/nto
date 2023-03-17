@@ -10,6 +10,7 @@ import patternDanila3D from "../img/pattern-Danila3D.png";
 import patternNatali3D from "../img/pattern-Natali3D.png";
 import patternArseniy3D from "../img/pattern-Arseniy3D.png";
 import patternKate3D from "../img/pattern-Kate3D.png";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
 	const [active, setActive] = useState(false);
@@ -52,7 +53,7 @@ export default function Carousel() {
 
 	return (
 		<div className='slider'>
-			<div className='slider__qr'>
+			<div className='slider__qr' title="Увеличить">
 				<div className={active ? "slider__background" : ""}></div>
 				<div
 					className={active ? "slider__in" : "slider__to"}
@@ -72,6 +73,9 @@ export default function Carousel() {
 					<img src={qr} alt='qr'></img>
 				</div>
 			</div>
+			<Link className='slider__html' title="Код командного блока" to='/html?num=-1'>
+				<div className='slider__out'>?</div>
+			</Link>
 			<Slider {...settings}>
 				{comandCards.map((card, index) => (
 					<div className='slider__container' key={index}>

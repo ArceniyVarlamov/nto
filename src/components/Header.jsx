@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import icon from "../img/ar.png";
 import * as THREE from "three";
-import { useEffect, useState, useRef } from "react";
 
 export default function Header() {
 	const GRAVITY = 0.0007;
@@ -10,11 +9,21 @@ export default function Header() {
 	let raf, scene, camera, renderer, controls;
 	let container, plane;
 
+	function randArr(array) {
+		var rand = (Math.random() * array.length) | 0;
+		var rValue = array[rand];
+		return rValue;
+	}
+
 	const addBall = () => {
 		const geo = new THREE.SphereGeometry(Math.random() + 0.5, 10, 10);
 		const mat = new THREE.MeshBasicMaterial({
-			color: 0x000,
-			wireframe: true,
+			color: randArr([
+				0xab4e52, 0xf0d698, 0x123524, 0x102c54, 0x919192, 0xbaaf96, 0x412227,
+				0x6d6552, 0x464451, 0x151719, 0x1f4037, 0x434750,
+			]),
+			transparent: true,
+			opacity: 0.25,
 		});
 		const msh = new THREE.Mesh(geo, mat);
 
@@ -112,7 +121,6 @@ export default function Header() {
 				ball.userData.vx = Math.random() / 10;
 			} else {
 				ball.userData.vx = -Math.random() / 10;
-				
 			}
 		}
 	}, 2000);
