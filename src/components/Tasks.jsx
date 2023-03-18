@@ -14,6 +14,8 @@ import background11 from "../img/background11.jpg"
 import background12 from "../img/background12.jpg"
 import background13 from "../img/background13.jpg"
 import background14 from "../img/background14.jpg"
+import background15 from "../img/background15.jpg"
+import background16 from "../img/background15.jpg"
 
 export default function Tasks() {
 	const titles = [
@@ -31,7 +33,8 @@ export default function Tasks() {
 		"Множество объектов",
 		"Волшебный куб",
 		"AR портал",
-		"",
+		"Маски",
+		"Кубики",
 	];
 
 	const img = [
@@ -48,7 +51,9 @@ export default function Tasks() {
 		background11,
 		background12,
 		background13,
-		background14
+		background14,
+		background15,
+		background16,
 	]
 
 	return (
@@ -81,6 +86,7 @@ export default function Tasks() {
 					return (
 						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
+							<img src={img[i]} alt=""></img>
 						</Link>
 					);
 				})}

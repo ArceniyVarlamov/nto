@@ -15,6 +15,22 @@ export default function Description(
 		num: 1,
 	},
 ) {
+	const titles = ["Триггер и оверлей",
+	"Текст и простые объекты",
+	"Объекты сложной формы",
+	"Встроенный звук",
+	"Встроенное видео",
+	"Мультимаркер",
+	"Вращающийся глобус",
+	"Движущаяся плоскость",
+	"Теги и их значения",
+	"Дыра в полу",
+	"Спрайтовая анимация",
+	"Множество объектов",
+	"Волшебный куб",
+	"AR портал",
+	"Маски",
+	"Кубики",]
 	const tasksInfo = [
 		{
 			num: 1,
@@ -103,6 +119,34 @@ export default function Description(
 		{
 			num: 15,
 			leftPage: 14,
+			rightPage: 16,
+			url: "https://arceniyvarlamov.github.io/tasks/advanced/masks.html",
+			video: "",
+		},
+		{
+			num: 16,
+			leftPage: 15,
+			rightPage: 17,
+			url: "https://arceniyvarlamov.github.io/tasks/games/boxes/boxes.html",
+			video: "",
+		},
+		{
+			num: 17,
+			leftPage: 16,
+			rightPage: 18,
+			url: "",
+			video: "",
+		},
+		{
+			num: 18,
+			leftPage: 17,
+			rightPage: 19,
+			url: "",
+			video: "",
+		},
+		{
+			num: 19,
+			leftPage: 18,
 			rightPage: 1,
 			url: "",
 			video: "",
@@ -124,7 +168,13 @@ export default function Description(
 		[logo],
 		[cube1, cube2, cube3, cube4, cube5, cube6],
 		[logo],
-		[logo],
+		[NaN],
+		[NaN],
+		[],
+		[],
+		[],
+		[],
+		[],
 	];
 
 	const imgDesk = useRef();
@@ -141,11 +191,11 @@ export default function Description(
 	return (
 		<div className='description'>
 			<div className='description__num'>
-				<Link to={`/task?num=${+num - 1 === -1 ? 14 : +num - 1}`}>
+				<Link to={`/task?num=${+num - 1 === -1 ? 18 : +num - 1}`}>
 					<img className='description__str1' src={arrow} alt='>'></img>
 				</Link>
-				Задание {+num + 1}
-				<Link to={`/task?num=${+num + 1 === 15 ? 0 : +num + 1}`}>
+					{titles[num]}
+				<Link to={`/task?num=${+num + 1 === 19 ? 0 : +num + 1}`}>
 					<img className='description__str2' src={arrow} alt=''></img>
 				</Link>
 			</div>

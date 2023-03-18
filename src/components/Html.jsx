@@ -529,7 +529,7 @@ export default function Html({ num = 0 }) {
 
 		<script type="module">
 			import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
-import { Link } from 'react-router-dom';
+			import { Link } from 'react-router-dom';
 
 			var scene, camera, renderer, clock, deltaTime, totalTime;
 
@@ -1008,7 +1008,332 @@ import { Link } from 'react-router-dom';
 		</script>
 	</body>
 </html>`,
-		``,
+		`<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://stemkoski.github.io/A-Frame-Examples/js/aframe-spritesheet-animation.js"></script>
+        <script src="https://libs.zappar.com/zappar-aframe/2.0.0/zappar-aframe.js"></script>
+
+        <meta charset="utf-8" />
+        <title>Model Example</title>
+        <link rel="stylesheet" href="./css/masks.css" />
+    </head>
+
+    <body>
+        <a-scene id="scene">
+            <!-- Ask user for camera permissions, display some text if permission is denied -->
+            <a-entity zappar-permissions-ui id="permissions"></a-entity>
+            <!-- shows a full-page dialog that informs the user they're using an unsupported browser -->
+            <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
+
+            <a-camera zappar-camera="user-facing: true;" />
+
+            <!-- Setup our face tracker -->
+            <a-entity zappar-face id="my-face-tracker">
+                <!-- Include a head mask object that will make sure the user's head appears in the center of our helmet -->
+                <a-entity zappar-head-mask="face:#my-face-tracker;"></a-entity>
+                <!-- Include a 3D model inside our face tracker -->
+                <a-entity
+                    light="type: point; intensity: 2; distance: 1000; decay: 1"
+                    position="0 10 10"
+                ></a-entity>
+                <a-entity
+                    id="switcher"
+                    gltf-model="./ref/animation.glb"
+                    position="-2 -3 4"
+                    scale="0.3 0.3 0.3"
+                    rotation="0 -90 0"
+                    animation-mixer
+                ></a-entity>
+            </a-entity>
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <button class="make-screenshot">Make screenshot</button>
+        <div class="preview">
+            <div class="preview__screenshot">
+                <img src="" alt="screenshot" />
+            </div>
+        </div>
+        <div class="change">
+            <div id="bear" class="change__mask"></div>
+            <div id="mask" class="change__mask"></div>
+            <div id="smth" class="change__mask"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+        <script src="./js/masks.js"></script>
+    </body>
+</html>`,
+		`<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+		<script src="https://ideaspacevr.github.io/aframe-particle-system-component/dist/aframe-particle-system-component.min.js"></script>
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			#background_status {
+				padding: 30px;
+				width: 220px;
+				margin: auto;
+			}
+			#status {
+				color: #2e6482;
+				font-family: sans-serif;
+				font-size: 23px;
+				font-weight: bold;
+				position: absolute;
+				bottom: 87%;
+				left: 24%;
+				cursor: pointer;
+			}
+			#backbt {
+				position: absolute;
+				bottom: 10%;
+				width: 110px;
+				right: 35%;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cell" hidden="true">0</div>
+		<div id="background_status">
+			<img
+				id="loding"
+				src="https://cdn.glitch.global/0ecc6900-36b9-4883-8350-3422b24267a8/some_div.svg?v=1679064982586"
+				style="width: 100%"
+			/>
+			<div id="status">Выберите сундук</div>
+		</div>
+		<script>
+			AFRAME.registerComponent("curl", {
+				init: function () {
+					this.el.addEventListener("mouseenter", function (evt) {
+						document.getElementById("cell").textContent = "1";
+						console.log(document.getElementById("cell"));
+					});
+					this.el.addEventListener("mouseleave", function (evt) {
+						document.getElementById("cell").textContent = "0";
+						console.log(document.getElementById("cell"));
+					});
+				},
+			});
+		</script>
+		<script>
+			AFRAME.registerComponent("curl2", {
+				init: function () {
+					this.el.addEventListener("mouseenter", function (evt) {
+						document.getElementById("cell").textContent = "2";
+						console.log(document.getElementById("cell"));
+					});
+					this.el.addEventListener("mouseleave", function (evt) {
+						document.getElementById("cell").textContent = "0";
+						console.log(document.getElementById("cell"));
+					});
+				},
+			});
+		</script>
+		<script>
+			AFRAME.registerComponent("curl3", {
+				init: function () {
+					this.el.addEventListener("mouseenter", function (evt) {
+						document.getElementById("cell").textContent = "3";
+						console.log(document.getElementById("cell"));
+					});
+					this.el.addEventListener("mouseleave", function (evt) {
+						document.getElementById("cell").textContent = "0";
+						console.log(document.getElementById("cell"));
+					});
+				},
+			});
+		</script>
+		<a-scene>
+			<a-entity camera
+				><a-entity
+					cursor="fuse: true; fuseTimeout: 1000"
+					position="0 0 -1"
+					geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+					material="color: #2e6482; shader: flat"
+				></a-entity
+			></a-entity>
+			<a-marker preset="hiro" class="collidable">
+				<a-entity
+					material="color: red"
+					id="cp1"
+					gltf-model="https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoonidle.glb?v=1678174166061"
+					position="0 0 0"
+					scale="0.2 0.2 0.2"
+					rotation="0 90 0"
+					curl
+					animation-mixer="clip: *; loop: repeat"
+					class="collidable"
+				></a-entity>
+				<a-entity
+					material="color: red"
+					id="cp2"
+					gltf-model="https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoonidle.glb?v=1678174166061"
+					position="-2 0 0"
+					scale="0.2 0.2 0.2"
+					rotation="0 90 0"
+					curl2
+					animation-mixer="clip: *; loop: repeat"
+					class="collidable"
+				></a-entity>
+				<a-entity
+					id="cp3"
+					gltf-model="https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoonidle.glb?v=1678174166061"
+					position="2 0 0"
+					scale="0.2 0.2 0.2"
+					rotation="0 90 0"
+					curl3
+					animation-mixer="clip: *; loop: repeat"
+					class="collidable"
+					material="color: red"
+				></a-entity>
+				<a-entity
+					particle-system="color: #0000AA; particleCount: 500"
+					id="effects"
+					gltf-model="https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/effects.glb?v=1678513407470"
+					position="0 0 0"
+					scale="0.2 0.2 0.2"
+					rotation="0 90 0"
+					animation-mixer="clip: *; loop: repeat"
+					class="collidable"
+					visible="false"
+				>
+					<a-entity id="winob" position="0 8 0"></a-entity
+				></a-entity>
+			</a-marker>
+		</a-scene>
+		<div id="backbt" onclick="location.reload();">
+			<img
+				src="https://cdn.glitch.global/0ecc6900-36b9-4883-8350-3422b24267a8/rechardg.png?v=1679071637057"
+				style="width: 100%"
+			/>
+		</div>
+		<script>
+			let k = 0;
+			let w = Math.floor(Math.random() * 3) + 1;
+			let obr = Math.floor(Math.random() * 3) + 1;
+			const wob = document.getElementById("winob");
+			let flag = false;
+			console.log(w);
+			if (obr == 1) {
+				wob.setAttribute(
+					"gltf-model",
+					"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/1_trofey%20(1).glb?v=1678551061825"
+				);
+			} else if (obr == 2) {
+				wob.setAttribute(
+					"gltf-model",
+					"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/chtoto%20(1).glb?v=1678551062320"
+				);
+			} else if (obr == 3) {
+				wob.setAttribute(
+					"gltf-model",
+					"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/omul_pryzhok%20(1).glb?v=1678551063386"
+				);
+			}
+			const button = document.getElementById("backbt");
+			function Change() {
+				const cp1 = document.getElementById("cp1");
+				const cp2 = document.getElementById("cp2");
+				const cp3 = document.getElementById("cp3");
+				const effects = document.getElementById("effects");
+				const disp = document.getElementById("status");
+				if (w == k) {
+					disp.textContent = "Победа!";
+					disp.setAttribute("style",
+						"font-size: 27px; left:26%;")
+					
+					const imgLoding = document.getElementById("loding");
+					imgLoding.setAttribute(
+						"src",
+						"https://cdn.glitch.global/0ecc6900-36b9-4883-8350-3422b24267a8/win_seal.png?v=1679128607563"
+					);
+					flag = true;
+				} else {
+					disp.textContent = "Неудача!";
+					disp.setAttribute("style",
+						"font-size: 27px; left:25%;")
+					
+					const imgLoding = document.getElementById("loding");
+					imgLoding.setAttribute(
+						"src",
+						"https://cdn.glitch.global/0ecc6900-36b9-4883-8350-3422b24267a8/sad_seal.png?v=1679128763782"
+					);
+					flag = false;
+				}
+				if (k == 1) {
+					cp1.setAttribute(
+						"gltf-model",
+						"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoon.glb?v=1678174004066"
+					);
+					if (flag) {
+						effects.setAttribute("visible", "true");
+						effects.setAttribute("position", "0 0 0");
+					}
+				} else if (k == 2) {
+					cp2.setAttribute(
+						"gltf-model",
+						"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoon.glb?v=1678174004066"
+					);
+
+					if (flag) {
+						effects.setAttribute("visible", "true");
+						effects.setAttribute("position", "-2 0 0");
+					}
+				} else if (k == 3) {
+					cp3.setAttribute(
+						"gltf-model",
+						"https://cdn.glitch.global/33aa1ac4-4c6d-49d0-b78a-73b3c9f291aa/ChestCartoon.glb?v=1678174004066"
+					);
+					if (flag) {
+						effects.setAttribute("visible", "true");
+						effects.setAttribute("position", "2 0 0");
+					}
+				}
+			}
+
+			button.addEventListener("click", function () {
+				console.log(document.getElementById("cell"));
+				if (document.getElementById("cell").textContent == "1") {
+					k = 1;
+				} else if (document.getElementById("cell").textContent == "2") {
+					k = 2;
+				} else if (document.getElementById("cell").textContent == "3") {
+					k = 3;
+				}
+				Change();
+			});
+
+			addEventListener("touchstart", function () {
+				console.log(document.getElementById("cell"));
+				if (document.getElementById("cell").textContent == "1") {
+					k = 1;
+				} else if (document.getElementById("cell").textContent == "2") {
+					k = 2;
+				} else if (document.getElementById("cell").textContent == "3") {
+					k = 3;
+				}
+				Change();
+			});
+		</script>
+	</body>
+</html>`,
 		``,
 		``,
 		``,
@@ -1203,6 +1528,25 @@ import { Link } from 'react-router-dom';
 		show = false;
 	}
 
+	const titles = [
+		"Триггер и оверлей",
+		"Текст и простые объекты",
+		"Объекты сложной формы",
+		"Встроенный звук",
+		"Встроенное видео",
+		"Мультимаркер",
+		"Вращающийся глобус",
+		"Движущаяся плоскость",
+		"Теги и их значения",
+		"Дыра в полу",
+		"Спрайтовая анимация",
+		"Множество объектов",
+		"Волшебный куб",
+		"AR портал",
+		"",
+		"Кубики",
+	];
+
 	return (
 		<>
 			<div className='code'>
@@ -1210,9 +1554,12 @@ import { Link } from 'react-router-dom';
 					<div className='code__info'>
 						<p>{htmlInfo[num].split("\n").length} строк</p>
 						{show ? (
-							<div className='code__nav'>
-								<Nav num={num}></Nav>
-							</div>
+							<>
+								<p>{titles[num]}</p>
+								<div className='code__nav'>
+									<Nav num={num}></Nav>
+								</div>
+							</>
 						) : (
 							<div className='code__nav'>Решение командного блока</div>
 						)}

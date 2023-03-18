@@ -19,11 +19,11 @@ export default function Header() {
 		const geo = new THREE.SphereGeometry(Math.random() + 0.5, 10, 10);
 		const mat = new THREE.MeshBasicMaterial({
 			color: randArr([
-				0xab4e52, 0xf0d698, 0x123524, 0x102c54, 0x919192, 0xbaaf96, 0x412227,
-				0x6d6552, 0x464451, 0x151719, 0x1f4037, 0x434750,
+				0xab4e52, 0xf0d698, 0x123524, 0x102c54, 0xbaaf96, 0x412227,
+				0x6d6552, 0x464451, 0x1f4037,
 			]),
 			transparent: true,
-			opacity: 0.25,
+			opacity: 0.4,
 		});
 		const msh = new THREE.Mesh(geo, mat);
 
