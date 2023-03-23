@@ -15,7 +15,21 @@ import background12 from "../img/background12.jpg"
 import background13 from "../img/background13.jpg"
 import background14 from "../img/background14.jpg"
 import background15 from "../img/background15.jpg"
-import background16 from "../img/background15.jpg"
+import background16 from "../img/background16.jpg"
+import background17 from "../img/background17.jpg"
+import background18 from "../img/background18.jpg"
+import background19 from "../img/background19.jpg"
+import background20 from "../img/background20.jpg"
+import background21 from "../img/background21.jpg"
+import background22 from "../img/background22.jpg"
+import background23 from "../img/background23.jpg"
+import background24 from "../img/background24.jpg"
+import background25 from "../img/background25.jpg"
+import background26 from "../img/background26.jpg"
+import background27 from "../img/background27.jpg"
+import background28 from "../img/background28.jpg"
+import background29 from "../img/background29.jpg"
+
 
 export default function Tasks() {
 	const titles = [
@@ -31,10 +45,23 @@ export default function Tasks() {
 		"Дыра в полу",
 		"Спрайтовая анимация",
 		"Множество объектов",
-		"Волшебный куб",
-		"AR портал",
-		"Маски",
-		"Кубики",
+		"Трехмерные фигуры на гранях куба",
+		"Объекты внутри куба",
+		"Множество динамических объектов на одном маркере",
+		"Прыгающий мяч (анимация)",
+		"Мяч прыгающий (компонент)",
+		"Пин-понг",
+		"Цилиндрическая дырка в полу",
+		"Портал в виртуальный мир",
+		"Управление виртуальным объектом при помощи клавиатуры",
+		"Тень с секретом",
+		"3D фигура отдельными точками",
+		"Управление виртуальной камерой при помощи клавиатуры",
+		"Мультимаркер и его взаимодействие",
+		"Кубитоклобусы",
+		"Собиратель омулей",
+		"Найди бабра (GPS)",
+		"Найди бабра (AR)",
 	];
 
 	const img = [
@@ -54,11 +81,24 @@ export default function Tasks() {
 		background14,
 		background15,
 		background16,
+		background17,
+		background18,
+		background19,
+		background20,
+		background21,
+		background22,
+		background23,
+		background24,
+		background25,
+		background26,
+		background27,
+		background28,
+		background29
 	]
 
 	return (
 		<div className='tasks'>
-			<div className='tasks__paragraph'>AR.js</div>
+			<div className='tasks__paragraph'>Задачи базового уровня</div>
 			<div className='tasks__container'>
 				{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
 					return (
@@ -69,9 +109,9 @@ export default function Tasks() {
 					);
 				})}
 			</div>
-			<div className='tasks__paragraph'>Three.js, Universal SDK</div>
+			<div className='tasks__paragraph'>Задачи продвинутого уровня</div>
 			<div className='tasks__container'>
-				{[12, 13, 14].map((i) => {
+				{[12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24].map((i) => {
 					return (
 						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
@@ -80,9 +120,20 @@ export default function Tasks() {
 					);
 				})}
 			</div>
-			<div className='tasks__paragraph'>Игры</div>
+			<div className='tasks__paragraph'>Своя игра</div>
 			<div className='tasks__container'>
-				{[15, 16, 17].map((i) => {
+				{[25].map((i) => {
+					return (
+						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
+							<p>{titles[i]}</p>
+							<img src={img[i]} alt=""></img>
+						</Link>
+					);
+				})}
+			</div>
+			<div className='tasks__paragraph'>Авторские работы</div>
+			<div className='tasks__container'>
+				{[26, 27, 28].map((i) => {
 					return (
 						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
