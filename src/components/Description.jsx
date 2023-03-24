@@ -52,8 +52,8 @@ export default function Description(
 		"Мультимаркер и его взаимодействие",
 		"Кубитоклобусы",
 		"Собиратель омулей",
-		"Найди бабра (GPS)",
-		"Найди бабра (AR)",
+		"Сокровища бабра (GPS)",
+		"Сокровища бабра (AR)",
 	];
 	const tasksInfo = [
 		"https://arceniyvarlamov.github.io/tasks/base/1.html",
